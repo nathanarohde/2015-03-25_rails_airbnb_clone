@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       flash[:notice] = 'Welcome to the site!'
       session[:user_id] = @user.id
-      redirect_to user.path(@user)
+      redirect_to user_path(@user)
     else
       flash[:alert] = 'Error creating profile.'
       render :new

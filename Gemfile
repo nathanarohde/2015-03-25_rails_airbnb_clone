@@ -14,7 +14,7 @@ gem 'bootstrap_form'
 gem 'bootswatch-rails'
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.10'
+gem 'bcrypt', '~> 3.1.10', require: 'bcrypt'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
