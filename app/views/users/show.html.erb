@@ -1,0 +1,9 @@
+<div class='row'>
+  <% @places.each do |place| %>
+    <%= place.name %>
+  <% end %>
+</div>
+
+<% if current_user == @user %>
+  <h4> Add Place </h4>
+<% end %>

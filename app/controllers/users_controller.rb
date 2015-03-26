@@ -2,6 +2,11 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @places = @user.places.all
+  end
+
+  def new
+    @user= User.new
   end
 
   def create
@@ -11,6 +16,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user.path(@user)
     else
+      flash[:alert] = 'Error creating profile.'
       render :new
     end
   end
@@ -18,7 +24,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+    params.require(:user).permit(:email, :name, :password, :password_confirmation)
   end
 
 end
